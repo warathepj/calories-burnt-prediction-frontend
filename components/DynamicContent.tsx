@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 export default function DynamicContent({
   children,
-  fallback = <div>Loading...</div>
+  fallback = null
 }: {
   children: React.ReactNode
   fallback?: React.ReactNode
@@ -15,5 +15,9 @@ export default function DynamicContent({
     setIsClient(true)
   }, [])
 
-  return isClient ? children : fallback
+  if (!isClient) {
+    return fallback
+  }
+
+  return children
 }
