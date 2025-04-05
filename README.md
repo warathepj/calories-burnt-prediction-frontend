@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ซอร์สโค้ดนี้ ใช้สำหรับเป็นตัวอย่างเท่านั้น ถ้านำไปใช้งานจริง ผู้ใช้ต้องจัดการเรื่องความปลอดภัย และ ประสิทธิภาพด้วยตัวเอง
+
+# Calories Burnt Prediction Application
+
+A web application that analyzes and visualizes calories burned based on various factors including gender, age, height, weight, and vital signs.
+
+## Features
+
+- Data visualizations
+- Real-time data analysis
+- Multiple analysis views:
+  - Calories burned by gender
+  - Age-based analysis
+  - Height and weight correlations
+  - Duration impact analysis
+  - Vital signs correlation
+  - And more...
+
+## Tech Stack
+
+### Frontend
+
+- Next.js 15.2
+- React 19
+- TypeScript
+- Tailwind CSS
+- Redux Toolkit
+
+### Backend
+
+- FastAPI
+- Python
+- Pandas
+- Matplotlib
+- Seaborn
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (18.18.0 or higher)
+- Python (3.8 or higher)
+- npm or yarn
+- pip
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/warathepj/calories-burnt-prediction-frontend.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Frontend setup:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Backend setup:
+   download data at https://www.kaggle.com/datasets/ruchikakumbhar/calories-burnt-prediction
 
-## Learn More
+```bash
+git clone https://github.com/warathepj/calories-burnt-prediction-backend.git
+cd backend
+# Create a virtual environment (windows)
+py -3 -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Open your browser and navigate to:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:8000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## API Endpoints
 
-## Deploy on Vercel
+- `GET /`: Welcome message
+- `GET /api/calories`: Retrieve calories data
+- `GET /api/plot/calories-by-gender`: Gender-based analysis
+- `GET /api/plot/calories-by-age`: Age-based analysis- Additional endpoints for various visualizations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT
+
+## Acknowledgments
+
+- Next.js team for the frontend framework
+- FastAPI team for the backend framework

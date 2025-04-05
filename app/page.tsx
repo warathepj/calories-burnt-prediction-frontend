@@ -10,10 +10,13 @@ import CaloriesByHeartRate from '@/components/CaloriesByHeartRate'
 import CaloriesByBodyTemp from '@/components/CaloriesByBodyTemp'
 import CaloriesDurationHeartRate from '@/components/CaloriesDurationHeartRate'
 import CaloriesDurationBodyTemp from '@/components/CaloriesDurationBodyTemp'
+import DurationVitalsCorrelation from '@/components/DurationVitalsCorrelation'
+import TallGenderComparison from '@/components/TallGenderComparison'
+import ScrollToTop from '@/components/ScrollToTop'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <DynamicContent fallback={<p>Loading...</p>}>
           <HelloWorld />
           
@@ -23,7 +26,7 @@ export default function Home() {
               <h2 className="text-xl font-semibold text-center mb-6 text-gray-800">
                 Explore Data Analysis
               </h2>
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-6">
                 <a 
                   href="#gender-chart" 
                   className="relative inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 
@@ -180,15 +183,28 @@ export default function Home() {
               <div id="calories-duration-body-temp" className="scroll-mt-24">
                 <CaloriesDurationBodyTemp />
               </div>
+              <div id="duration-vitals-correlation" className="scroll-mt-24 col-span-2">
+                <DurationVitalsCorrelation />
+              </div>
+              <div id="tall-gender-comparison" className="scroll-mt-24">
+                <TallGenderComparison />
+              </div>
             </div>
             <div id="correlation-chart" className="w-full scroll-mt-24">
               <CorrelationMatrix />
             </div>
           </div>
+
+          <ScrollToTop />
       </DynamicContent>
     </main>
   )
 }
+
+
+
+
+
 
 
 

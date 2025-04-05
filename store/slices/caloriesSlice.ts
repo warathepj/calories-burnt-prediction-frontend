@@ -14,14 +14,14 @@ interface CaloriesData {
 
 interface CaloriesState {
   data: CaloriesData[];
-  data5: CaloriesData[];
+  data20: CaloriesData[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
 
 const initialState: CaloriesState = {
   data: [],
-  data5: [],
+  data20: [],
   status: 'idle',
   error: null
 };
@@ -47,7 +47,7 @@ const caloriesSlice = createSlice({
       .addCase(fetchCaloriesData.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.data = action.payload.data;
-        state.data5 = action.payload.data5;
+        state.data20 = action.payload.data20;
       })
       .addCase(fetchCaloriesData.rejected, (state, action) => {
         state.status = 'failed';

@@ -24,25 +24,26 @@ export default function ScrollToTop() {
     
     // Initial check
     toggleVisibility()
-
     return () => {
       window.removeEventListener('scroll', toggleVisibility)
     }
   }, [])
 
-  if (!isVisible) {
-    return null
-  }
-
   return (
-    <Button
-      onClick={scrollToTop}
-      className="fixed bottom-4 right-4 z-50 rounded-full p-2 shadow-lg transition-all duration-300 hover:shadow-xl"
-      size="icon"
-      variant="default"
-    >
-      <ArrowUp className="h-5 w-5" />
-    </Button>
+    <div className="fixed bottom-8 right-8 z-[9999]" style={{ position: 'fixed' }}>
+      {isVisible && (
+        <Button
+          onClick={scrollToTop}
+          className="rounded-full p-2 shadow-lg transition-all duration-300 hover:shadow-xl hover:translate-y-[-2px]"
+          size="icon"
+          variant="default"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </Button>
+      )}
+    </div>
   )
 }
+
+
 
