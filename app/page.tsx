@@ -13,12 +13,18 @@ import CaloriesDurationBodyTemp from '@/components/CaloriesDurationBodyTemp'
 import DurationVitalsCorrelation from '@/components/DurationVitalsCorrelation'
 import TallGenderComparison from '@/components/TallGenderComparison'
 import ScrollToTop from '@/components/ScrollToTop'
+import Link from 'next/link'
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <DynamicContent fallback={<p>Loading...</p>}>
-          <HelloWorld />
+          <div className="flex flex-col gap-4">
+            <HelloWorld />
+            <Link href="/table" className="text-blue-500 hover:text-blue-700 underline">
+              View Data Table
+            </Link>
+          </div>
           
           {/* Navigation Section */}
           <div className="w-full max-w-4xl mx-auto my-12">
@@ -200,6 +206,10 @@ export default function Home() {
     </main>
   )
 }
+
+
+
+
 
 
 

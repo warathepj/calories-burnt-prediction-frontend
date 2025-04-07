@@ -54,7 +54,7 @@ git clone https://github.com/warathepj/calories-burnt-prediction-frontend.git
 2. Frontend setup:
 
 ```bash
-cd frontend
+cd calories-burnt-prediction-frontend
 npm install
 npm run dev
 ```
@@ -64,7 +64,7 @@ npm run dev
 
 ```bash
 git clone https://github.com/warathepj/calories-burnt-prediction-backend.git
-cd backend
+cd calories-burnt-prediction-backend
 # Create a virtual environment (windows)
 py -3 -m venv .venv
 .venv\Scripts\activate

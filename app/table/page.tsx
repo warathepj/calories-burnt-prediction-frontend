@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import CaloriesTable from '@/components/CaloriesTable'
+import Link from 'next/link'
 
 export default function Table() {
   const [limit, setLimit] = useState(20)
@@ -11,7 +12,15 @@ export default function Table() {
 
   return (
     <main className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Calories Data</h1>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">Calories Data</h1>
+        <Link 
+          href="/" 
+          className="text-blue-500 hover:text-blue-700 transition-colors duration-200"
+        >
+          ← Back to Home
+        </Link>
+      </div>
       <CaloriesTable limit={limit} />
       <div className="mt-6 flex justify-center">
         <button
